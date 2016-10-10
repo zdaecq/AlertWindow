@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let q = view.window
+        q?.becomeKey()
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {

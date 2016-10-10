@@ -10,7 +10,6 @@ import UIKit
 
 protocol WindowControllerProtocol: class {
     var didCancel: () -> () { get set }
-    var view: UIView! { get set }
 }
 
 final class AlertWindow: UIWindow {
@@ -28,7 +27,7 @@ final class AlertWindow: UIWindow {
         didSet {
             guard let controller = rootViewController as? WindowControllerProtocol else { return }
             controller.didCancel = hide
-            setupBlurView(frame: controller.view.bounds)
+            setupBlurView(frame: UIScreen.main.bounds)
             setupWindowLevel()
         }
     }
